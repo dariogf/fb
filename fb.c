@@ -2410,11 +2410,12 @@ static VALUE connection_create(isc_db_handle handle, VALUE db)
 	fb_connection->cursor = rb_ary_new();
 	dialect = SQL_DIALECT_CURRENT;
 	db_dialect = fb_connection_db_SQL_Dialect(fb_connection);
-
+	/* dariogf
 	if (db_dialect < dialect) {
 		dialect = db_dialect;
+		*/
 		/* TODO: downgrade warning */
-	}
+	/*}*/
 
 	fb_connection->dialect = dialect;
 	fb_connection->db_dialect = db_dialect;
